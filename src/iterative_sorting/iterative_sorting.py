@@ -17,19 +17,25 @@ def selection_sort(arr):
 
 
 def bubble_sort(arr):
-    swapped = False
+    unsorted = True
 
-    for i in range(1, len(arr)):
-        if(arr[i] < arr[i - 1]):
-            swapped = True
-            cur_val = arr[i]
-            arr[i] = arr[i - 1]
-            arr[i - 1] = cur_val
+    while unsorted == True:
+        swapped = False
+        for i in range(1, len(arr)):
+            if(arr[i] < arr[i - 1]):
+                swapped = True
+                cur_val = arr[i]
+                arr[i] = arr[i - 1]
+                arr[i - 1] = cur_val
 
+        if(swapped == False):
+            unsorted = False
+        else:
+            pass
     return arr
 
 
-print(bubble_sort([1, 9, 3, 4, 7, 8, 2]))
+print(bubble_sort([1, 9, 3, 4, 7, 8, 2, 13, 29, 12, 5]))
 
 # STRETCH: implement the Count Sort function below
 
