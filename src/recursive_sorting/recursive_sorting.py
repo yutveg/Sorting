@@ -1,16 +1,52 @@
-# TO-DO: complete the helpe function below to merge 2 sorted arrays
-def merge( arrA, arrB ):
-    elements = len( arrA ) + len( arrB )
-    merged_arr = [0] * elements
+# TO-DO: complete the helper function below to merge 2 sorted arrays
+def merge(arrA, arrB):
+    elements = len(arrA) + len(arrB)
+    master = [None] * elements
     # TO-DO
-    
-    return merged_arr
+    a_index = 0
+    b_index = 0
+    master_index = 0
+    while(master_index < elements):
+        print(
+            f"\na_index: {a_index} and value: {arrA[a_index]}, b_index: {b_index} and value: {arrB[b_index]}, master_index: {master_index}\n")
+        print(f"master array: {master}")
 
+        if(a_index == len(arrA) and b_index == len(arrB)):
+            break
+        if(a_index == len(arrA)):
+            master[master_index] = arrB[b_index]
+            master_index += 1
+            b_index += 1
+
+        if(b_index == len(arrB)):
+            master[master_index] = arrA[a_index]
+            master_index += 1
+            a_index += 1
+
+        if(arrA[a_index] < arrB[b_index]):
+            master[master_index] = arrA[a_index]
+            master_index += 1
+            a_index += 1
+        else:
+            master[master_index] = arrB[b_index]
+            master_index += 1
+            b_index += 1
+
+    return master
+
+
+arrA = [4, 5, 6, 7]
+
+arrB = [1, 8, 9]
+print(merge(arrA, arrB))
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
-def merge_sort( arr ):
+
+
+def merge_sort(arr):
     # TO-DO
 
+    # split array into halves
     return arr
 
 
@@ -20,7 +56,8 @@ def merge_in_place(arr, start, mid, end):
 
     return arr
 
-def merge_sort_in_place(arr, l, r): 
+
+def merge_sort_in_place(arr, l, r):
     # TO-DO
 
     return arr
@@ -28,6 +65,6 @@ def merge_sort_in_place(arr, l, r):
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
-def timsort( arr ):
+def timsort(arr):
 
     return arr
