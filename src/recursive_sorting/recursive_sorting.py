@@ -33,14 +33,19 @@ def merge(arrA, arrB):
 arrA = [4, 5, 6, 7]
 
 arrB = [1, 8, 9]
-print(merge(arrA, arrB))
-
+# print(merge(arrA, arrB))
+A = [1, 2, 3, 4, 5, 6]
+B = A[:len(A)//2]
+C = A[len(A)//2:]
+print(B)
+print(C)
 # TO-DO: implement the Merge Sort function below USING RECURSION
 
 
 def merge_sort(arr):
     # TO-DO
-
+    while(len(arr) > 1):
+        pass
     # split array into halves
     return arr
 
@@ -48,7 +53,6 @@ def merge_sort(arr):
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
     # TO-DO
-
     return arr
 
 
