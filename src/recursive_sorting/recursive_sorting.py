@@ -6,7 +6,6 @@ def merge(arrA, arrB):
     a_index = 0
     b_index = 0
     master_index = 0
-    print(len(arrA), len(arrB))
     while(a_index < len(arrA) and b_index < len(arrB)):
         if(arrA[a_index] < arrB[b_index]):
             master[master_index] = arrA[a_index]
@@ -34,23 +33,31 @@ arrA = [4, 5, 6, 7]
 
 arrB = [1, 8, 9]
 # print(merge(arrA, arrB))
-A = [1, 2, 3, 4, 5, 6]
-B = A[:len(A)//2]
-C = A[len(A)//2:]
-print(B)
-print(C)
+arrC = [2, 1, 6, 3]
 # TO-DO: implement the Merge Sort function below USING RECURSION
 
 
 def merge_sort(arr):
     # TO-DO
-    while(len(arr) > 1):
-        pass
+    if(len(arr) > 1):
+        arr1 = arr[len(arr)//2:]
+        arr2 = arr[:len(arr)//2]
+        print(arr1)
+        print(arr2)
+        if(len(arr1) > 1):
+            merge_sort(arr1)
+        if(len(arr2) > 1):
+            merge_sort(arr2)
+        else:
+            arr = merge(arr1, arr2)
     # split array into halves
     return arr
 
 
+print(merge_sort(arrC))
 # STRETCH: implement an in-place merge sort algorithm
+
+
 def merge_in_place(arr, start, mid, end):
     # TO-DO
     return arr
