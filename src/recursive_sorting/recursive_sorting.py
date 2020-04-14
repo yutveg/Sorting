@@ -6,23 +6,8 @@ def merge(arrA, arrB):
     a_index = 0
     b_index = 0
     master_index = 0
-    while(master_index < elements):
-        print(
-            f"\na_index: {a_index} and value: {arrA[a_index]}, b_index: {b_index} and value: {arrB[b_index]}, master_index: {master_index}\n")
-        print(f"master array: {master}")
-
-        if(a_index == len(arrA) and b_index == len(arrB)):
-            break
-        if(a_index == len(arrA)):
-            master[master_index] = arrB[b_index]
-            master_index += 1
-            b_index += 1
-
-        if(b_index == len(arrB)):
-            master[master_index] = arrA[a_index]
-            master_index += 1
-            a_index += 1
-
+    print(len(arrA), len(arrB))
+    while(a_index < len(arrA) and b_index < len(arrB)):
         if(arrA[a_index] < arrB[b_index]):
             master[master_index] = arrA[a_index]
             master_index += 1
@@ -31,6 +16,16 @@ def merge(arrA, arrB):
             master[master_index] = arrB[b_index]
             master_index += 1
             b_index += 1
+
+    while(a_index < len(arrA)):
+        master[master_index] = arrA[a_index]
+        master_index += 1
+        a_index += 1
+
+    while(b_index < len(arrB)):
+        master[master_index] = arrB[b_index]
+        master_index += 1
+        b_index += 1
 
     return master
 
