@@ -87,6 +87,12 @@ Recall that the runtime complexity of an algorithm, often expressed using *Big O
 Look into Counting Sort.
 - How is this algorithm different from other iterative sorting algorithms?
     - What are the advantages/disadvantages to this type of sorting algorithm?
+
+Counting sort creates a dictionary to figure out how many times an integer occurs in a list, then maps through the values in that dictionary to return the sorted array. Benefit: It has a worst case of O(n (+ range of list)) and a simple implement. 
+
+Downside: It only works on lists of Ints. High operation cost possibility with a small amount of ints if they are a long distance from one another.
+
+
 - Take a look a the pseudocode for this algorithm and try implementing it in Python.
 
 ### You Might be Surprised at What Passes for a Sorting Algorithm
