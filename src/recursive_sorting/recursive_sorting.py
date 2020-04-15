@@ -39,19 +39,14 @@ arrC = [2, 1, 6, 3]
 
 def merge_sort(arr):
     # TO-DO
-    if(len(arr) > 1):
-        arr1 = arr[len(arr)//2:]
-        arr2 = arr[:len(arr)//2]
-        print(arr1)
-        print(arr2)
-        if(len(arr1) > 1):
-            merge_sort(arr1)
-        if(len(arr2) > 1):
-            merge_sort(arr2)
-        else:
-            arr = merge(arr1, arr2)
-    # split array into halves
-    return arr
+    if(len(arr) <= 1):
+        return arr
+
+    arr1 = arr[len(arr)//2:]
+    arr2 = arr[:len(arr)//2]
+    arr1 = merge_sort(arr1)
+    arr2 = merge_sort(arr2)
+    return merge(arr1, arr2)
 
 
 print(merge_sort(arrC))
