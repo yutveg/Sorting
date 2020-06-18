@@ -1,12 +1,16 @@
 # TO-DO: complete the helper function below to merge 2 sorted arrays
 def merge(arrA, arrB):
+    # pre-allocating for our master array (the array to return)
     elements = len(arrA) + len(arrB)
     master = [None] * elements
-    # TO-DO
+    # creating our initial indexes
     a_index = 0
     b_index = 0
     master_index = 0
+
+    # loop to use when in progress of both arrA and arrB
     while(a_index < len(arrA) and b_index < len(arrB)):
+
         if(arrA[a_index] < arrB[b_index]):
             master[master_index] = arrA[a_index]
             master_index += 1
@@ -16,11 +20,13 @@ def merge(arrA, arrB):
             master_index += 1
             b_index += 1
 
+    # loop to use while in progress of only arrA 
     while(a_index < len(arrA)):
         master[master_index] = arrA[a_index]
         master_index += 1
         a_index += 1
 
+    # loop to use while in progress of only arrB
     while(b_index < len(arrB)):
         master[master_index] = arrB[b_index]
         master_index += 1
@@ -38,14 +44,18 @@ arrC = [2, 1, 6, 3]
 
 
 def merge_sort(arr):
-    # TO-DO
+    # if our array is one item we end recursion and return it to parent function
     if(len(arr) <= 1):
         return arr
 
+    # otherwise 
+    # we split the array in half
     arr1 = arr[len(arr)//2:]
     arr2 = arr[:len(arr)//2]
+    # recurse on the now two arrays
     arr1 = merge_sort(arr1)
     arr2 = merge_sort(arr2)
+    # call helper function to return the product once arr1 and arr2 are returned
     return merge(arr1, arr2)
 
 
